@@ -1,12 +1,11 @@
 import express from "express";
+import { signup } from "../controllers/auth.controller.js";
 
 const router = express.Router();
 
 export default router;
 
-router.get("/signup",(req,res)=>{ //we have prefix it in server.js that is api/auth(same for all)
-    res.send("Signup endpoint");
-});
+router.post("/signup",signup)//we have prefix it in server.js that is api/auth(same for all);
 
 router.get("/login",(req,res)=>{
     res.send("Login endpoint");
